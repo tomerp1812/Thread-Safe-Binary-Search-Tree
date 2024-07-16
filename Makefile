@@ -1,9 +1,7 @@
-# 211769757 Adi Ben Yehuda 208001677 Shahar Moshonov
-
 CC = gcc
 CFLAGS = -no-pie -fopenmp
 
-TARGET = a.out
+TARGET = binary_search_tree
 SRCS = main.c binary_tree.c
 
 .PHONY: all clean
