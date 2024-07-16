@@ -31,5 +31,5 @@ make
 
 Run the compiled executable:
 ```bash
-./a.out
+./binary_search_tree
 ```
