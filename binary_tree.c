@@ -1,6 +1,3 @@
-//
-// Created by Omer Bar on 12/07/2024.
-//
 #include <stdbool.h>
 #include "binary_tree.h"
 #include <stdio.h>
@@ -52,9 +49,6 @@ TreeNode* insertNode(TreeNode* root, int data) {
             free(newNode);
             return root;
         }
-        // if current != null -> lock current
-        // else -> break;
-        // unlock parent
         if (current != NULL) {
             omp_set_lock(&current->lock);
             omp_unset_lock(&parent->lock);
@@ -131,11 +125,8 @@ TreeNode* deleteNode(TreeNode* root, int data) {
 
         // omp_set_lock(&minNode->lock);
         while (minNode->left != NULL) {
-            // TreeNode* temp = minNode;
             minParent = minNode;
-            minNode = minNode->left;
-            // omp_set_lock(&minNode->lock);   
-            // omp_unset_lock(&temp->lock);           
+            minNode = minNode->left;       
         }
 
         // Replace current node's data with in-order successor's data
